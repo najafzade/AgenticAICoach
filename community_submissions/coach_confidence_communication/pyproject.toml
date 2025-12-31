@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "coach_confidence_communication"
+version = "0.1.0"
+description = "AI Confidence Coach using CrewAI and FastAPI"
+authors = ["AgenticAICoach Contributors <noreply@example.com>"]
+packages = [{ include = "coach_confidence_communication", from = "src" }]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<=3.13"
+crewai = { extras = ["tools"], version = "^0.35.8" }
+crewai-tools = "^0.4.6"
+fastapi = "^0.112.0"
+uvicorn = { version = "^0.30.0", extras = ["standard"] }
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+
+[tool.poetry.scripts]
+confidence_coach = "coach_confidence_communication.main:run"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

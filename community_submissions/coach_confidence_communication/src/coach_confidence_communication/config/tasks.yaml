@@ -1,0 +1,15 @@
+analyze_communication:
+  description: |
+    Analyze the user communication: "{text}".
+    Use the confidence_marker_detector tool to extract hedging, apologizing, minimizing, and passive voice.
+    Provide a short summary highlighting the most important confidence gaps.
+  expected_output: |
+    A structured summary of confidence markers with a brief explanation of their impact.
+
+craft_feedback:
+  description: |
+    Based on the analysis and the user context "{context}", craft supportive coaching feedback.
+    Use the confidence_rewrite_guidance tool to suggest confident alternatives.
+    Provide a confidence rating from 1-5 and encourage a revision submission.
+  expected_output: |
+    A warm coaching response with actionable rewrite suggestions and a confidence rating.
